@@ -18,6 +18,7 @@ public class Main extends PApplet {
 
     public void setup(){
         ball = new Ball(width/2,height/2, this);
+        println("test");
 
     }
 
