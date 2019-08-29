@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class Main extends PApplet {
 
+    Ball ball;
+
     public static void main(String[] args) {
         PApplet.main("com.company.Main");
     }
@@ -15,10 +17,11 @@ public class Main extends PApplet {
     }
 
     public void setup(){
+        ball = new Ball(width/2,height/2, this);
 
     }
 
     public void draw(){
-
+        ball.display();
     }
 }

@@ -18,6 +18,10 @@ public class Ball {
     }
 
     void display(){
+        parent.stroke(0);
+        parent.strokeWeight( 2);
+        parent.fill(200,0,0);
+        parent.ellipse(location.x, location.y,40,40);
 
     }
 
