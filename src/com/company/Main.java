@@ -23,7 +23,8 @@ public class Main extends PApplet {
 
     public void draw(){
         background(255);
-        ball.applyForce(ball.force);
+        //ball.applyForce(force); Gonna be set as acceleration from cannon blast
+        ball.applyForce(ball.drag());
         ball.update();
         ball.display();
         ball.acceleration.mult(0);
