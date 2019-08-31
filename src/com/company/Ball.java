@@ -18,14 +18,19 @@ public class Ball {
     }
 
     void display(){
-        parent.stroke(0);
+        parent.stroke(47, 79, 79);
         parent.strokeWeight( 2);
-        parent.fill(200,0,0);
+        parent.fill(47,79,79);
         parent.ellipse(location.x, location.y,40,40);
 
     }
 
-    void update(){
+    void applyForce(PVector f){
+        acceleration.add(f);
+    }
 
+    void update(){
+        velocity.add(acceleration);
+        location.add(velocity);
     }
 }
