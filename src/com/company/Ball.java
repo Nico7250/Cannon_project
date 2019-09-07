@@ -21,7 +21,7 @@ public class Ball {
         force = new PVector(0,0);
         drag = new PVector(0,0);
         mass = (float) 1;
-        c = (float) 0;
+        c = (float) 0.5;
     }
     // Graphics for ball.
     void display(){
@@ -34,15 +34,16 @@ public class Ball {
     // Newtons 2nd law. Accumulated forces.
     void applyForce(PVector force){
         //f is a copy of the applied force, so that the force object itself isn't changed.
-        PVector f = PVector.div(force, mass);
-        acceleration.add(f);
+        // Acceleration = force/mass
+            PVector f = PVector.div(force, mass);
+            acceleration.add(f);
     }
 
     PVector drag(){
         float speed = velocity.mag();
         float dragMagnitude = c * speed * speed;
 
-        PVector dragForce = velocity.get();
+        PVector dragForce = velocity.copy();
         dragForce.mult(-1);
 
         dragForce.normalize();
@@ -50,6 +51,7 @@ public class Ball {
 
         return dragForce;
     }
+
     //The base physics formulas for the ball.
     void update(){
         velocity.add(acceleration);
