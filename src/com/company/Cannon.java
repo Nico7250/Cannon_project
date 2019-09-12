@@ -21,9 +21,9 @@ public class Cannon {
         parent.popMatrix();
     }
 
-    float aim(){
+    public float aim(){
         PVector mouse = new PVector(parent.mouseX, parent.mouseY);
-        PVector cannon = new PVector(80,720);
+        PVector cannon = new PVector(90,720);
         PVector dir = PVector.sub(mouse, cannon);
         return parent.atan2(dir.y, dir.x);
 

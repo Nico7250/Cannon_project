@@ -18,20 +18,22 @@ public class Main extends PApplet {
     }
 
     public void setup(){
+        ball = new Ball(/*width/2,height/2,*/ this);
         imageMode(CENTER);
-        ball = new Ball(width/2,height/2, this);
         cannon = new Cannon(this);
 
     }
     PVector w = new PVector((float)0.2,0);
     public void draw(){
         background(255);
-        //ball.applyForce(force); Gonna be set as acceleration from cannon blast
-        ball.applyForce(w);
-        ball.applyForce(ball.drag());
-        ball.update();
         ball.display();
-        ball.acceleration.mult(0);
+        //ball.applyForce(force); Gonna be set as acceleration from cannon blast
+        ball.shoot();
+        ball.update();
+        //ball.shoot();
+        //ball.applyForce(cannon.shoot());
+
+        //ball.acceleration.mult(0);
         cannon.display();
     }
 }
